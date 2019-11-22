@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState('Luiz')
+
+  useEffect(() => {
+    setState('Paulo')
+    return
+  }, [state, setState])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +23,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {state}
         </a>
       </header>
     </div>
