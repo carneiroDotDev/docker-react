@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t luuizpaulo/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run luuizpaulo/docker-react yarn run test -- --coverage
